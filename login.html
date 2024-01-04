@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login&Registration Form</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <input type="checkbox" id="check">
+        <div class="form">
+            <header>Sign In</header>
+            <form id="loginForm">
+                <input type="text" name="email" id="email" placeholder="Enter E-Mail Address" >
+                <input type="password" name="password" id="password" placeholder="Enter Password" >
+                <a href="#">Forgot Password?</a>
+                <input type="submit" class="button" value="Login">
+            </form>
+            <div class="signup">
+                <span class="signup">Don't have an account?
+                <label for="check">Sign Up</label>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Get form values
+            const email = this.elements['email'].value;
+            const password = this.elements['password'].value;
+
+            // Check if email and password match predefined values
+            if (email === 'gulsum@gmail.com' && password === '4444') {
+                // Redirect to a new page (replace 'new-page.html' with your desired page)
+                window.location.href = 'new-page.html';
+            } else {
+                alert('Invalid email or password. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
